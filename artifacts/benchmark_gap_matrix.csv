@@ -1,0 +1,14 @@
+axis_or_failure_type,COCO_edit_hardneg,Mixed_edit_hardneg,VG_structured_relation_stress,Winoground_native_2x2,SugarCrepe_proposed
+single_image_plausible_but_image_wrong,Y,Y,P,N,Y
+rule_conditioned_relation_discrimination,P,P,Y,P,P
+paired_grounded_ambiguity_2x2,N,N,N,Y,N
+low_margin_calibration_stress,P,P,Y,P,P
+rare_unseen_generalization_split,N,N,Y,N,N
+adversarial_lexical_overlap_control,N,N,N,P,Y
+shortcut_hackability_resistance,N,N,N,P,Y
+fluent_non_template_hard_negatives,N,N,N,P,Y
+single_image_compositional_forced_choice_retrieval,P,P,P,P,Y
+relation_sensitive_hard_negatives,P,P,Y,P,Y
+attribute_binding_or_swap_hard_negatives,P,P,N,P,Y
+multi_object_multi_relation_reasoning,N,P,P,P,P
+edit_aware_negative_taxonomy,Y,Y,Y,P,Y

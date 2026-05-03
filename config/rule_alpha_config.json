@@ -1,0 +1,7 @@
+{
+  "__default__": 1.0,
+  "role_reversal": 1.5,
+  "subject_swap": 1.2,
+  "object_swap": 1.0,
+  "predicate_swap": 0.2
+}

@@ -1,0 +1,54 @@
+{
+  "_comment": "Bootstrap attribute lexicon for heuristic attribute scoring when ontology attribute table has no match. Groups map to heuristic plausibility scores by object type.",
+  "colors": [
+    "red", "blue", "green", "brown", "black", "white", "yellow",
+    "pink", "gray", "grey", "orange", "purple", "gold", "silver",
+    "beige", "tan", "navy", "maroon", "teal", "cyan", "magenta"
+  ],
+  "size_shape": [
+    "big", "small", "large", "tiny", "huge", "tall", "short",
+    "long", "round", "flat", "wide", "narrow", "thick", "thin",
+    "heavy", "light"
+  ],
+  "appearance": [
+    "striped", "spotted", "patterned", "checkered", "plain",
+    "dirty", "clean", "wet", "dry", "shiny", "dull", "old",
+    "new", "broken", "open", "closed", "full", "empty",
+    "wooden", "metal", "plastic", "glass", "stone", "brick"
+  ],
+  "clothing": [
+    "shirt", "tshirt", "t-shirt", "sweater", "jacket", "coat",
+    "dress", "pants", "jeans", "shorts", "skirt", "suit",
+    "uniform", "jersey", "blouse", "hoodie", "vest"
+  ],
+  "headwear": [
+    "hat", "cap", "helmet", "beanie", "hood"
+  ],
+  "footwear": [
+    "shoe", "shoes", "boot", "boots", "sandal", "sandals",
+    "sneaker", "sneakers"
+  ],
+  "hair": [
+    "hair", "beard", "mustache", "moustache",
+    "curly hair", "long hair", "short hair", "blonde hair",
+    "dark hair", "white hair", "gray hair"
+  ],
+  "modifiers_that_precede_nouns": [
+    "red", "blue", "green", "brown", "black", "white", "yellow",
+    "pink", "gray", "orange", "purple", "big", "small", "large",
+    "tiny", "tall", "short", "long", "old", "new", "wet", "dry",
+    "wooden", "metal", "dark", "bright", "thick", "thin", "wide"
+  ],
+  "heuristic_score_by_type": {
+    "_comment": "When ontology attribute matrix lookup fails, use these as fallback scores (0-1).",
+    "color":      0.6,
+    "size":       0.5,
+    "shape":      0.5,
+    "appearance": 0.4,
+    "clothing":   0.6,
+    "hair":       0.6,
+    "headwear":   0.6,
+    "footwear":   0.6,
+    "unknown":    0.3
+  }
+}

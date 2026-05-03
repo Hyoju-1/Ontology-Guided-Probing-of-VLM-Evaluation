@@ -1,0 +1,382 @@
+# Anonymization Report
+
+## Scope
+
+This package contains only paper-relevant code, configs, selected figure assets, and derived summaries needed to inspect or reproduce the anonymous submission experiments.
+
+## Included Files
+
+- `Knowledge/README_generalized_semantic_ontology.md`
+- `Knowledge/analyze_backbone_aware_two_mode.py`
+- `Knowledge/analyze_blip_openclip_significance.py`
+- `Knowledge/analyze_coco_winoground_significance_extension.py`
+- `Knowledge/analyze_gate_sensitivity.py`
+- `Knowledge/analyze_significance_selective_correction.py`
+- `Knowledge/analyze_sugarcrepe_significance.py`
+- `Knowledge/analyze_sugarcrepe_subtypes.py`
+- `Knowledge/analyze_winoground_failure_modes.py`
+- `Knowledge/analyze_winoground_failure_taxonomy.py`
+- `Knowledge/audit_benchmark_ontology_coverage.py`
+- `Knowledge/audit_grounding_support_export.py`
+- `Knowledge/audit_winoground_grounding_unavailable.py`
+- `Knowledge/bootstrap_editaware_significance.py`
+- `Knowledge/build_large_pool_extension_benchmarks.py`
+- `Knowledge/build_ontology_prototypes.py`
+- `Knowledge/build_semantic_violation_benchmark.py`
+- `Knowledge/build_significance_master_table.py`
+- `Knowledge/build_vg_coverage_ontology_json.py`
+- `Knowledge/build_winoground_materialized_benchmark.py`
+- `Knowledge/build_winoground_taxonomy_figure_package.py`
+- `Knowledge/config/bootstrap_attribute_lexicon.json`
+- `Knowledge/config/compat_object_alias_map.json`
+- `Knowledge/config/relation_alias_map.json`
+- `Knowledge/config/rule_alpha_config.json`
+- `Knowledge/config/rule_upweight.json`
+- `Knowledge/convert_sugarcrepe_to_semantic_violation.py`
+- `Knowledge/edit_aware_contrastive_grounding_analysis.py`
+- `Knowledge/export_generalized_semantic_compat.py`
+- `Knowledge/extract_caption_triplets.py`
+- `Knowledge/extract_semantic_components.py`
+- `Knowledge/extract_triplets_from_vg_meta_text.py`
+- `Knowledge/extract_triplets_from_vg_relationships.py`
+- `Knowledge/filter_benchmark_by_source.py`
+- `Knowledge/merge_benchmark_sources.py`
+- `Knowledge/output/backbone_aware_two_mode/backbone_aware_two_mode_paper_table.csv`
+- `Knowledge/output/backbone_aware_two_mode/backbone_aware_two_mode_paper_table.md`
+- `Knowledge/output/backbone_aware_two_mode/backbone_aware_two_mode_policy_comparison.png`
+- `Knowledge/output/backbone_aware_two_mode/backbone_aware_two_mode_summary.csv`
+- `Knowledge/output/backbone_aware_two_mode/backbone_aware_two_mode_summary.json`
+- `Knowledge/output/backbone_aware_two_mode/backbone_aware_two_mode_summary.md`
+- `Knowledge/output/backbone_aware_two_mode/backbone_aware_two_mode_takeaways.md`
+- `Knowledge/output/backbone_aware_two_mode/backbone_routing_rule_report.md`
+- `Knowledge/output/backbone_calibration_test/backbone_calibration_latex_table.tex`
+- `Knowledge/output/backbone_calibration_test/backbone_calibration_margin_audit.csv`
+- `Knowledge/output/backbone_calibration_test/backbone_calibration_results.csv`
+- `Knowledge/output/backbone_calibration_test/backbone_calibration_results.json`
+- `Knowledge/output/backbone_calibration_test/backbone_calibration_summary.md`
+- `Knowledge/output/backbone_calibration_test/bridgetower_base_itm_mlm_calibration_pairwise.png`
+- `Knowledge/output/backbone_calibration_test/siglip_base_patch16_224_calibration_pairwise.png`
+- `Knowledge/output/benchmark_ontology_coverage_audit/benchmark_ontology_coverage_audit.csv`
+- `Knowledge/output/benchmark_ontology_coverage_audit/benchmark_ontology_coverage_audit.json`
+- `Knowledge/output/benchmark_ontology_coverage_audit/benchmark_ontology_coverage_audit.md`
+- `Knowledge/output/benchmark_ontology_coverage_audit/benchmark_ontology_coverage_audit.pdf`
+- `Knowledge/output/benchmark_ontology_coverage_audit/benchmark_ontology_coverage_audit.png`
+- `Knowledge/output/coco5k_calibrated_selective_semantic_grounding_analysis.json`
+- `Knowledge/output/coco5k_calibrated_selective_semantic_grounding_analysis.md`
+- `Knowledge/output/coco5k_edit_aware_recipe_eval.json`
+- `Knowledge/output/coco5k_edit_aware_recipe_eval.md`
+- `Knowledge/output/confounding_controlled_benchmark/v3/confounding_controlled_benchmark_v3_latex_table.tex`
+- `Knowledge/output/confounding_controlled_benchmark/v3/confounding_controlled_benchmark_v3_relaxed_sample_ids.json`
+- `Knowledge/output/confounding_controlled_benchmark/v3/confounding_controlled_benchmark_v3_results.csv`
+- `Knowledge/output/confounding_controlled_benchmark/v3/confounding_controlled_benchmark_v3_strict_sample_ids.json`
+- `Knowledge/output/confounding_controlled_benchmark/v3/confounding_controlled_benchmark_v3_summary.md`
+- `Knowledge/output/confounding_controlled_benchmark/v3/v3_candidate_filter_audit.csv`
+- `Knowledge/output/confounding_controlled_benchmark/v3/v3_selection_audit.md`
+- `Knowledge/output/controlled_signal_analysis/controlled_signal_analysis_latex_table.tex`
+- `Knowledge/output/controlled_signal_analysis/controlled_signal_analysis_results.json`
+- `Knowledge/output/controlled_signal_analysis/controlled_signal_analysis_summary.md`
+- `Knowledge/output/controlled_signal_analysis/controlled_signal_analysis_table.csv`
+- `Knowledge/output/controlled_signal_analysis/controlled_signal_schema_audit.md`
+- `Knowledge/output/controlled_signal_analysis/controlled_signal_subset_counts.csv`
+- `Knowledge/output/controlled_signal_analysis/grounding_control_signal_histograms.png`
+- `Knowledge/output/controlled_signal_analysis/semantic_control_signal_histograms.png`
+- `Knowledge/output/coverage_controlled_evaluation/coverage_controlled_evaluation_results.csv`
+- `Knowledge/output/coverage_controlled_evaluation/coverage_controlled_evaluation_results.json`
+- `Knowledge/output/coverage_controlled_evaluation/coverage_controlled_evaluation_summary.md`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_itm_base_coco_coco5k_editaware.csv`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_itm_base_coco_coco5k_editaware.json`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_itm_base_coco_coco5k_editaware.md`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_itm_base_coco_mixed_vg20k_coco20k_4k_editaware.csv`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_itm_base_coco_mixed_vg20k_coco20k_4k_editaware.json`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_itm_base_coco_mixed_vg20k_coco20k_4k_editaware.md`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_itm_base_coco_winoground_exploded_editaware.csv`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_itm_base_coco_winoground_exploded_editaware.json`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_itm_base_coco_winoground_exploded_editaware.md`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_results.csv`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_results.json`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_run_manifest.csv`
+- `Knowledge/output/cross_model_blip_torch26_retry/blip_run_manifest.json`
+- `Knowledge/output/cross_model_blip_torch26_retry/cross_model_blip_summary.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_base_itm_mlm_coco5k_editaware.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_base_itm_mlm_coco5k_editaware.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_base_itm_mlm_coco5k_editaware.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_base_itm_mlm_mixed_vg20k_coco20k_4k_editaware.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_base_itm_mlm_mixed_vg20k_coco20k_4k_editaware.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_base_itm_mlm_mixed_vg20k_coco20k_4k_editaware.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_base_itm_mlm_winoground_exploded_editaware.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_base_itm_mlm_winoground_exploded_editaware.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_base_itm_mlm_winoground_exploded_editaware.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_results.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_results.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_run_manifest.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/bridgetower_score_interface_report.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/cross_model_openclip_bridgetower_summary.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/multi_model_retrieval_table.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_bridgetower_family_ordering.png`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_results.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_results.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_run_manifest.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_score_interface_report.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_vit_b16_laion2b_coco5k_editaware.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_vit_b16_laion2b_coco5k_editaware.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_vit_b16_laion2b_coco5k_editaware.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_vit_b16_laion2b_mixed_vg20k_coco20k_4k_editaware.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_vit_b16_laion2b_mixed_vg20k_coco20k_4k_editaware.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_vit_b16_laion2b_mixed_vg20k_coco20k_4k_editaware.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_vit_b16_laion2b_winoground_exploded_editaware.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_vit_b16_laion2b_winoground_exploded_editaware.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/openclip_vit_b16_laion2b_winoground_exploded_editaware.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_all_experiments_restructured_table.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_all_experiments_restructured_table.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_all_experiments_restructured_table.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_all_experiments_restructured_table_caption.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_all_models_visual_semantic_image_conditioned.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_all_models_visual_semantic_image_conditioned.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_all_models_visual_semantic_image_conditioned.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_all_models_visual_semantic_image_conditioned_caption.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_main_table_blip_openclip.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_main_table_blip_openclip.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_main_table_blip_openclip.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_main_table_blip_openclip_caption.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_main_table_visual_semantic_image_conditioned.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_main_table_visual_semantic_image_conditioned.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_main_table_visual_semantic_image_conditioned.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_main_table_visual_semantic_image_conditioned_caption.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_supplementary_table_siglip_bridgetower.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_supplementary_table_siglip_bridgetower.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_supplementary_table_siglip_bridgetower.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_supplementary_table_siglip_bridgetower_caption.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_supplementary_table_visual_semantic_image_conditioned.csv`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_supplementary_table_visual_semantic_image_conditioned.json`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_supplementary_table_visual_semantic_image_conditioned.md`
+- `Knowledge/output/cross_model_openclip_bridgetower/paper_supplementary_table_visual_semantic_image_conditioned_caption.md`
+- `Knowledge/output/cross_model_siglip_qwen/cross_model_siglip_qwen_summary.md`
+- `Knowledge/output/cross_model_siglip_qwen/qwen2vl_results.csv`
+- `Knowledge/output/cross_model_siglip_qwen/qwen2vl_results.json`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_coco5k_editaware.csv`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_coco5k_editaware.json`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_coco5k_editaware.md`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_mixed_vg20k_coco20k_4k_editaware.csv`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_mixed_vg20k_coco20k_4k_editaware.json`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_mixed_vg20k_coco20k_4k_editaware.md`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_winoground_exploded_editaware.csv`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_winoground_exploded_editaware.json`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_winoground_exploded_editaware.md`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_winoground_exploded_native.csv`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_winoground_exploded_native.json`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_winoground_exploded_native.md`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_results.csv`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_results.json`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_run_manifest.csv`
+- `Knowledge/output/cross_model_siglip_qwen/siglip_run_manifest.json`
+- `Knowledge/output/cross_model_suite/base_clip_b32_mixed_editaware.csv`
+- `Knowledge/output/cross_model_suite/base_clip_b32_mixed_editaware.json`
+- `Knowledge/output/cross_model_suite/base_clip_b32_mixed_editaware.md`
+- `Knowledge/output/cross_model_suite/clip_b32_mixed_consistency_check.json`
+- `Knowledge/output/cross_model_suite/clip_b32_mixed_consistency_check.md`
+- `Knowledge/output/cross_model_suite/clip_b32_mixed_visual_only_backfill.json`
+- `Knowledge/output/cross_model_suite/clip_b32_mixed_visual_only_backfill.md`
+- `Knowledge/output/cross_model_suite/clip_b32_winoground_visual_only_backfill.json`
+- `Knowledge/output/cross_model_suite/clip_b32_winoground_visual_only_backfill.md`
+- `Knowledge/output/cross_model_suite/clip_vitl14_coco5k_editaware.csv`
+- `Knowledge/output/cross_model_suite/clip_vitl14_coco5k_editaware.json`
+- `Knowledge/output/cross_model_suite/clip_vitl14_coco5k_editaware.md`
+- `Knowledge/output/cross_model_suite/clip_vitl14_mixed_vg20k_coco20k_4k_editaware.csv`
+- `Knowledge/output/cross_model_suite/clip_vitl14_mixed_vg20k_coco20k_4k_editaware.json`
+- `Knowledge/output/cross_model_suite/clip_vitl14_mixed_vg20k_coco20k_4k_editaware.md`
+- `Knowledge/output/cross_model_suite/clip_vitl14_winoground_exploded_editaware.csv`
+- `Knowledge/output/cross_model_suite/clip_vitl14_winoground_exploded_editaware.json`
+- `Knowledge/output/cross_model_suite/clip_vitl14_winoground_exploded_editaware.md`
+- `Knowledge/output/cross_model_suite/clip_vitl14_winoground_exploded_native.csv`
+- `Knowledge/output/cross_model_suite/clip_vitl14_winoground_exploded_native.json`
+- `Knowledge/output/cross_model_suite/clip_vitl14_winoground_exploded_native.md`
+- `Knowledge/output/cross_model_suite/coverage_summary.json`
+- `Knowledge/output/cross_model_suite/coverage_summary.md`
+- `Knowledge/output/cross_model_suite/cross_model_groupA_ordering.png`
+- `Knowledge/output/cross_model_suite/cross_model_groupB_behavior.png`
+- `Knowledge/output/cross_model_suite/cross_model_results_groupA.csv`
+- `Knowledge/output/cross_model_suite/cross_model_results_groupA.json`
+- `Knowledge/output/cross_model_suite/cross_model_results_groupB.csv`
+- `Knowledge/output/cross_model_suite/cross_model_results_groupB.json`
+- `Knowledge/output/cross_model_suite/cross_model_results_summary.md`
+- `Knowledge/output/cross_model_suite/run_manifest.csv`
+- `Knowledge/output/cross_model_suite/run_manifest.json`
+- `Knowledge/output/edit_aware_contrastive_grounding_analysis.csv`
+- `Knowledge/output/edit_aware_contrastive_grounding_analysis.json`
+- `Knowledge/output/edit_aware_contrastive_grounding_analysis.md`
+- `Knowledge/output/gate_rescue_harm_audit/gate_rescue_harm_audit_results.csv`
+- `Knowledge/output/gate_rescue_harm_audit/gate_rescue_harm_audit_results.json`
+- `Knowledge/output/gate_rescue_harm_audit/gate_rescue_harm_audit_summary.md`
+- `Knowledge/output/grounding_realcache_experiment_summary.json`
+- `Knowledge/output/grounding_realcache_experiment_summary.md`
+- `Knowledge/output/grounding_support_export_audit.json`
+- `Knowledge/output/grounding_support_export_audit.md`
+- `Knowledge/output/heldout_operating_point_validation/heldout_operating_point_validation_dev_grid.csv`
+- `Knowledge/output/heldout_operating_point_validation/heldout_operating_point_validation_results.csv`
+- `Knowledge/output/heldout_operating_point_validation/heldout_operating_point_validation_results.json`
+- `Knowledge/output/heldout_operating_point_validation/heldout_operating_point_validation_summary.md`
+- `Knowledge/output/ontology_component_recipes.json`
+- `Knowledge/output/ontology_concepts_vg_coverage.json`
+- `Knowledge/output/qwen2vl_likelihood_mixed_4k_smoke2/progress.json`
+- `Knowledge/output/qwen2vl_likelihood_mixed_4k_smoke2/qwen2vl_likelihood_mixed_4k_editaware.csv`
+- `Knowledge/output/qwen2vl_likelihood_mixed_4k_smoke2/qwen2vl_likelihood_mixed_4k_editaware.json`
+- `Knowledge/output/qwen2vl_likelihood_mixed_4k_smoke2/qwen2vl_likelihood_mixed_4k_editaware.md`
+- `Knowledge/output/qwen2vl_likelihood_mixed_4k_smoke2/qwen2vl_likelihood_summary.json`
+- `Knowledge/output/qwen2vl_likelihood_mixed_4k_smoke2/qwen2vl_likelihood_summary.md`
+- `Knowledge/output/score_geometry_analysis/gate_activation_breakdown.csv`
+- `Knowledge/output/score_geometry_analysis/gate_activation_breakdown.json`
+- `Knowledge/output/score_geometry_analysis/gate_activation_summary.pdf`
+- `Knowledge/output/score_geometry_analysis/gate_activation_summary.png`
+- `Knowledge/output/score_geometry_analysis/score_geometry_analysis.md`
+- `Knowledge/output/score_geometry_analysis/score_geometry_pair_records.csv`
+- `Knowledge/output/score_geometry_analysis/score_margin_summary.csv`
+- `Knowledge/output/score_geometry_analysis/score_margin_summary.json`
+- `Knowledge/output/significance_blip_openclip_extension/blip_delta_ci.png`
+- `Knowledge/output/significance_blip_openclip_extension/blip_openclip_significance_summary.csv`
+- `Knowledge/output/significance_blip_openclip_extension/blip_openclip_significance_summary.json`
+- `Knowledge/output/significance_blip_openclip_extension/blip_openclip_significance_summary.md`
+- `Knowledge/output/significance_blip_openclip_extension/blip_paper_table.csv`
+- `Knowledge/output/significance_blip_openclip_extension/blip_paper_table.json`
+- `Knowledge/output/significance_blip_openclip_extension/openclip_delta_ci.png`
+- `Knowledge/output/significance_blip_openclip_extension/openclip_paper_table.csv`
+- `Knowledge/output/significance_blip_openclip_extension/openclip_paper_table.json`
+- `Knowledge/output/significance_coco_winoground_extension/coco_delta_ci.png`
+- `Knowledge/output/significance_coco_winoground_extension/coco_winoground_significance_summary.csv`
+- `Knowledge/output/significance_coco_winoground_extension/coco_winoground_significance_summary.json`
+- `Knowledge/output/significance_coco_winoground_extension/coco_winoground_significance_summary.md`
+- `Knowledge/output/significance_coco_winoground_extension/winoground_delta_ci.png`
+- `Knowledge/output/significance_master_table/significance_master_detailed.csv`
+- `Knowledge/output/significance_master_table/significance_master_overview.csv`
+- `Knowledge/output/significance_master_table/significance_master_overview.md`
+- `Knowledge/output/significance_selective_correction/delta_ci_plot.png`
+- `Knowledge/output/significance_selective_correction/delta_ci_plot.svg`
+- `Knowledge/output/significance_selective_correction/significance_summary.csv`
+- `Knowledge/output/significance_selective_correction/significance_summary.json`
+- `Knowledge/output/significance_selective_correction/significance_summary.md`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/factorized/ontology_component_coverage_summary.json`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/factorized/ontology_component_distribution.csv`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/factorized/ontology_component_scores.csv`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/factorized/ontology_component_summary.json`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/factorized/scoring_timing_summary.json`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/factorized/visual_support_summary.json`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_coverage_audit.csv`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_coverage_audit.json`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_coverage_audit.md`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_gate_diagnostics.json`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_gate_diagnostics.md`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_pilot_benchmark.json`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_pilot_clip_scored.json`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_pilot_dataset_summary.json`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_pilot_dataset_summary.md`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_pilot_recommendation.md`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_pilot_results.csv`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_pilot_results.json`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_pilot_results.md`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_pilot_subtype_comparison.png`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_schema_conversion_report.md`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_threshold_analysis.csv`
+- `Knowledge/output/sugarcrepe_pilot_highcompat_50/sugarcrepe_threshold_analysis.md`
+- `Knowledge/output/sugarcrepe_significance/sugarcrepe_significance_delta_ci.png`
+- `Knowledge/output/sugarcrepe_significance/sugarcrepe_significance_summary.csv`
+- `Knowledge/output/sugarcrepe_significance/sugarcrepe_significance_summary.json`
+- `Knowledge/output/sugarcrepe_significance/sugarcrepe_significance_summary.md`
+- `Knowledge/output/winoground_collapse_rootcause_summary.md`
+- `Knowledge/output/winoground_decomposition.json`
+- `Knowledge/output/winoground_decomposition.md`
+- `Knowledge/output/winoground_image_materialization_summary.json`
+- `Knowledge/output/winoground_native_2x2_eval.csv`
+- `Knowledge/output/winoground_native_2x2_eval.json`
+- `Knowledge/output/winoground_semantic_component_summary.md`
+- `Knowledge/plot_severity_calibration.py`
+- `Knowledge/prepare_component_fusion_scores.py`
+- `Knowledge/prepare_winoground_manual_cleanup_packet.py`
+- `Knowledge/run_backbone_calibration_test.py`
+- `Knowledge/run_bridgetower_retrieval_eval.py`
+- `Knowledge/run_confounding_controlled_benchmark.py`
+- `Knowledge/run_confounding_controlled_benchmark_v3.py`
+- `Knowledge/run_controlled_signal_analysis.py`
+- `Knowledge/run_coverage_controlled_evaluation.py`
+- `Knowledge/run_cross_model_suite.py`
+- `Knowledge/run_editaware_significance.py`
+- `Knowledge/run_gate_rescue_harm_audit.py`
+- `Knowledge/run_heldout_operating_point_validation.py`
+- `Knowledge/run_openclip_retrieval_eval.py`
+- `Knowledge/run_qwen2vl_forced_choice_eval.py`
+- `Knowledge/run_qwen2vl_likelihood_grounding_eval.py`
+- `Knowledge/run_siglip_threshold_lambda_sanity_sweep.py`
+- `Knowledge/run_sugarcrepe_gate_relaxation.py`
+- `Knowledge/run_sugarcrepe_pilot.py`
+- `Knowledge/score_image_conditioned_semantic_plausibility.py`
+- `Knowledge/score_semantic_violation_benchmark.py`
+- `Knowledge/summarize_blip_cross_model.py`
+- `Knowledge/summarize_cross_model_suite.py`
+- `Knowledge/summarize_openclip_bridgetower_cross_model.py`
+- `Knowledge/summarize_siglip_qwen_cross_model.py`
+- `Knowledge/summarize_sugarcrepe_pilot.py`
+- `Knowledge/validate_generalized_semantic_ontology.py`
+- `LICENSE`
+- `README.md`
+- `anonymization_report.md`
+- `anonymization_scan_results.txt`
+- `artifacts/benchmark_gap_matrix.csv`
+- `artifacts/figure2_case_selection.json`
+- `artifacts/figure3_cross_model_evaluator_dependence.json`
+- `figures/figure2_case_images/figure2_case_A_vg20k_0000001_vgrel_0000002.jpg`
+- `figures/figure2_case_images/figure2_case_B_vg20k_0011243_vgrel_0011244.jpg`
+- `figures/figure2_case_images/figure2_case_C_coco_0001568_coco_0041333.jpg`
+- `figures/figure2_case_images/figure2_case_D_winoground_11__img1.png`
+- `figures/figure2_case_images/figure2_case_E_winoground_329__img0.png`
+- `requirements.txt`
+- `scripts/make_figure1_ed_overview.py`
+- `scripts/make_figure2_failure_cases.py`
+- `scripts/make_figure3_cross_model_evaluator_dependence.py`
+- `scripts/make_figure4_score_geometry.py`
+
+## Excluded Files and Directories
+
+- version-control metadata and development-only hidden folders: excluded for anonymity and portability
+- Python bytecode caches and notebook checkpoint folders: excluded because they are not research artifacts
+- experiment tracking logs and local runtime caches: excluded because they are not required for reproduction
+- raw datasets and dataset mirrors: excluded because they are large and may have redistribution limits
+- downloaded model checkpoints and local snapshot caches: excluded because they are large local dependencies
+- large scored intermediates not needed to inspect paper tables: excluded to keep the package compact
+- unrelated repository areas outside the paper-facing Knowledge/, scripts/, artifacts/, and selected figures/: excluded to minimize scope
+
+## Identity Categories Searched
+
+- author-name strings
+- institution-name strings
+- personal email patterns
+- local username strings
+- non-anonymous repository reference patterns
+
+## Path Categories Searched
+
+- absolute home-directory paths
+- local desktop path fragments
+- local workspace path fragments
+- local environment interpreter paths
+- cache and model snapshot paths
+
+## Replacements Made
+
+- author-identifying names replaced with generic anonymous placeholders during release copy
+- institution-identifying strings replaced with generic anonymous placeholders during release copy
+- personal email patterns replaced with anonymous@example.com during release copy
+- absolute local paths rewritten to relative placeholders such as data/, models/, figures/, artifacts/, or <LOCAL_PATH>
+- local interpreter paths in run manifests rewritten to python
+- local model snapshot paths rewritten to models/... placeholders
+- local dataset paths rewritten to data/... placeholders
+- non-anonymous repository references removed or replaced with anonymous repository during release copy
+
+## Remaining Warnings
+
+- Raw datasets and model checkpoints are not bundled; users must obtain them from original public sources and place them under the relative placeholder directories described in README.md.
+- Some selected derived outputs still reference relative placeholder paths such as data/... or models/... because the original public assets are not redistributed here.
+
+## Package Summary
+
+- Total files included: 325
+- Package size: 60048545 bytes (57.3 MB)
+- Files rewritten during anonymization: release-local paths, manifests, and derived summaries were sanitized in the copied package only
+- Double-blind safety assessment: passed

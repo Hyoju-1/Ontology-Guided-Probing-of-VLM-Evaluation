@@ -1,0 +1,138 @@
+{
+  "figure": "Figure 3. Cross-model split and evaluator dependence",
+  "purpose": "Show that grounding-aware selective correction transfers differently across model families and that Winoground conclusions depend on exploded versus native 2x2 evaluator design.",
+  "sources": {
+    "cross_model_table": "Knowledge/output/backbone_aware_two_mode/backbone_aware_two_mode_paper_table.csv",
+    "clip_l14_exploded": "Knowledge/output/significance_coco_winoground_extension/coco_winoground_significance_summary.csv",
+    "clip_l14_native": "Knowledge/output/significance_coco_winoground_extension/coco_winoground_significance_summary.csv",
+    "siglip_exploded": "Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_winoground_exploded_editaware.json",
+    "siglip_native": "Knowledge/output/cross_model_siglip_qwen/siglip_base_patch16_224_winoground_exploded_native.json"
+  },
+  "cross_model_rows": [
+    {
+      "model": "CLIP-B/32",
+      "benchmark": "mixed_vg20k_coco20k_4k",
+      "delta": 0.02200000000000002,
+      "universal_grounding": 0.42625,
+      "universal_conservative": 0.40425,
+      "chosen_mode": "A"
+    },
+    {
+      "model": "CLIP-B/32",
+      "benchmark": "coco5k",
+      "delta": 0.10600000000000004,
+      "universal_grounding": 0.5392,
+      "universal_conservative": 0.4332,
+      "chosen_mode": "A"
+    },
+    {
+      "model": "CLIP-L/14",
+      "benchmark": "mixed_vg20k_coco20k_4k",
+      "delta": 0.03375,
+      "universal_grounding": 0.45075,
+      "universal_conservative": 0.417,
+      "chosen_mode": "A"
+    },
+    {
+      "model": "CLIP-L/14",
+      "benchmark": "coco5k",
+      "delta": 0.05479999999999996,
+      "universal_grounding": 0.5296,
+      "universal_conservative": 0.4748,
+      "chosen_mode": "A"
+    },
+    {
+      "model": "OpenCLIP",
+      "benchmark": "mixed_vg20k_coco20k_4k",
+      "delta": 0.013500000000000012,
+      "universal_grounding": 0.366,
+      "universal_conservative": 0.3525,
+      "chosen_mode": "A"
+    },
+    {
+      "model": "OpenCLIP",
+      "benchmark": "coco5k",
+      "delta": 0.04520000000000002,
+      "universal_grounding": 0.439,
+      "universal_conservative": 0.3938,
+      "chosen_mode": "A"
+    },
+    {
+      "model": "BLIP-ITM",
+      "benchmark": "mixed_vg20k_coco20k_4k",
+      "delta": 0.047750000000000015,
+      "universal_grounding": 0.51925,
+      "universal_conservative": 0.4715,
+      "chosen_mode": "A"
+    },
+    {
+      "model": "BLIP-ITM",
+      "benchmark": "coco5k",
+      "delta": 0.08800000000000002,
+      "universal_grounding": 0.5762,
+      "universal_conservative": 0.4882,
+      "chosen_mode": "A"
+    },
+    {
+      "model": "SigLIP",
+      "benchmark": "mixed_vg20k_coco20k_4k",
+      "delta": -0.03125,
+      "universal_grounding": 0.19225,
+      "universal_conservative": 0.2235,
+      "chosen_mode": "B"
+    },
+    {
+      "model": "SigLIP",
+      "benchmark": "coco5k",
+      "delta": 0.007000000000000006,
+      "universal_grounding": 0.223,
+      "universal_conservative": 0.216,
+      "chosen_mode": "B"
+    },
+    {
+      "model": "BridgeTower",
+      "benchmark": "mixed_vg20k_coco20k_4k",
+      "delta": -0.029249999999999998,
+      "universal_grounding": 0.12275,
+      "universal_conservative": 0.152,
+      "chosen_mode": "B"
+    },
+    {
+      "model": "BridgeTower",
+      "benchmark": "coco5k",
+      "delta": -0.020199999999999996,
+      "universal_grounding": 0.1042,
+      "universal_conservative": 0.1244,
+      "chosen_mode": "B"
+    }
+  ],
+  "evaluator_data": {
+    "clip_l14_exploded": {
+      "semantic": 0.5038167938931297,
+      "rel-phrase": 0.5521628498727735,
+      "spatial": 0.5572519083969466
+    },
+    "clip_l14_native": {
+      "spatial": 0.0925,
+      "rel-phrase": 0.1,
+      "semantic": 0.0
+    },
+    "siglip_exploded": {
+      "semantic": 0.5025,
+      "spatial": 0.55375,
+      "rel-phrase": 0.5525
+    },
+    "siglip_native": {
+      "semantic": 0.0,
+      "spatial": 0.075,
+      "rel-phrase": 0.085
+    }
+  },
+  "notes": [
+    "Cross-model panel uses pairwise gain: universal grounding-aware Mode A minus universal conservative Mode B.",
+    "CLIP-L/14 Winoground values are paper-aligned and loaded from the significance summary used in the main text tables.",
+    "SigLIP Winoground values remain descriptive cross-model artifacts and should not be interpreted as broad positive transfer evidence.",
+    "Evaluator panel intentionally compares different Winoground evaluator views; values should not be interpreted as a single common metric scale.",
+    "The figure supports a characterization claim rather than a universal winner claim."
+  ]
+}
