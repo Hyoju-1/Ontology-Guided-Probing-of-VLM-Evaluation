@@ -1,2 +1,0 @@
-{"sample_id":"train_0001","image_path":"images/example_0001.jpg","text":"person is on chair","frame_id":"frame_on","tuple_id":"tuple_person_on_chair","role_id":"role_subject"}
-{"sample_id":"train_0002","image_path":"images/example_0002.jpg","text":"chair is under person","frame_id":"frame_under","tuple_id":"tuple_chair_under_person"}
