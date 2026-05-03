@@ -1,115 +1,72 @@
-# From Text Plausibility to Image-Conditioned Correctness: Ontology-Guided Probing of VLM Evaluation
+# Anonymous Release: Ontology-Guided Probing of VLM Evaluation
 
-Anonymous double-blind NeurIPS E&D submission package.
+This repository contains the anonymous supplementary code and selected result artifacts for the paper:
 
-## Purpose
+**From Text Plausibility to Image-Conditioned Correctness: Ontology-Guided Probing of VLM Evaluation**
 
-This release packages the research code and selected derived summaries used to reproduce or inspect the main experiments for ontology-guided selective correction, semantic baselines, edit-aware contrastive deltas, coverage-controlled diagnostics, held-out operating-point validation, and cross-model evaluation.
+This release is prepared for double-blind review. Author names, affiliations, personal paths, and private repository information have been removed.
 
-## Included Components
+## Repository Structure
 
-- `Knowledge/`: core experiment scripts, configs, and selected derived outputs
-- `scripts/`: paper-facing figure scripts
-- `artifacts/`: small figure/table input artifacts
-- `figures/figure2_case_images/`: qualitative case assets used by Figure 2
-- `anonymization_report.md`: release construction and anonymization notes
-- `anonymization_scan_results.txt`: recursive post-build leak scan report
+```text
+anonymous_release_ontology_guided_vlm_eval/
+├── README.md
+├── requirements.txt or environment.yml
+├── config/
+├── src/
+│   ├── ontology/
+│   ├── scoring/
+│   ├── evaluation/
+│   └── utils/
+├── scripts/
+│   ├── run_main_cross_model_eval.py
+│   ├── run_significance_tests.py
+│   ├── run_backbone_calibration_test.py
+│   ├── run_confounding_controlled_benchmark.py
+│   ├── run_controlled_signal_analysis.py
+│   ├── run_gate_rescue_harm_audit.py
+│   ├── run_heldout_operating_point_validation.py
+│   ├── run_coverage_controlled_evaluation.py
+│   ├── run_eligibility_shuffle_control.py
+│   └── run_qwen2vl_likelihood_analysis.py
+├── output/
+│   ├── tables/
+│   ├── summaries/
+│   └── latex_tables/
+├── figures/
+└── anonymization_report.md
 
-## Core Experiment Groups
+## Contents
 
-- Benchmark construction and ontology resources:
-  - `Knowledge/build_semantic_violation_benchmark.py`
-  - `Knowledge/build_winoground_materialized_benchmark.py`
-  - `Knowledge/build_large_pool_extension_benchmarks.py`
-  - `Knowledge/build_vg_coverage_ontology_json.py`
-  - `Knowledge/build_ontology_prototypes.py`
-  - `Knowledge/extract_semantic_components.py`
-  - `Knowledge/export_generalized_semantic_compat.py`
+The release includes only files needed to inspect or reproduce the paper-facing results:
 
-- Scoring and edit-aware correction:
-  - `Knowledge/score_semantic_violation_benchmark.py`
-  - `Knowledge/score_image_conditioned_semantic_plausibility.py`
-  - `Knowledge/edit_aware_contrastive_grounding_analysis.py`
-  - `Knowledge/prepare_component_fusion_scores.py`
+core ontology/parsing/scoring/evaluation code
+scripts for main and appendix experiments
+selected summary tables and LaTeX tables
+compact CSV/Markdown result summaries
+anonymization report and scan results
 
-- Cross-model evaluation:
-  - `Knowledge/run_cross_model_suite.py`
-  - `Knowledge/run_openclip_retrieval_eval.py`
-  - `Knowledge/run_bridgetower_retrieval_eval.py`
-  - `Knowledge/run_qwen2vl_forced_choice_eval.py`
-  - `Knowledge/run_qwen2vl_likelihood_grounding_eval.py`
-  - `Knowledge/summarize_cross_model_suite.py`
-  - `Knowledge/summarize_blip_cross_model.py`
-  - `Knowledge/summarize_siglip_qwen_cross_model.py`
+The release does not include raw datasets, model checkpoints, embedding caches, temporary outputs, failed reruns, or unrelated experiment files.
 
-- Statistical tests and diagnostics:
-  - `Knowledge/run_editaware_significance.py`
-  - `Knowledge/bootstrap_editaware_significance.py`
-  - `Knowledge/analyze_significance_selective_correction.py`
-  - `Knowledge/analyze_coco_winoground_significance_extension.py`
-  - `Knowledge/analyze_blip_openclip_significance.py`
-  - `Knowledge/build_significance_master_table.py`
-  - `Knowledge/run_gate_rescue_harm_audit.py`
-  - `Knowledge/run_heldout_operating_point_validation.py`
-  - `Knowledge/run_coverage_controlled_evaluation.py`
-  - `Knowledge/run_controlled_signal_analysis.py`
-  - `Knowledge/run_backbone_calibration_test.py`
-  - `Knowledge/run_confounding_controlled_benchmark.py`
-  - `Knowledge/run_confounding_controlled_benchmark_v3.py`
 
-- SugarCrepe / controlled pilot diagnostics:
-  - `Knowledge/run_sugarcrepe_pilot.py`
-  - `Knowledge/summarize_sugarcrepe_pilot.py`
-  - `Knowledge/analyze_sugarcrepe_significance.py`
-  - `Knowledge/analyze_sugarcrepe_subtypes.py`
-  - `Knowledge/run_sugarcrepe_gate_relaxation.py`
 
-- Figure generation:
-  - `scripts/make_figure1_ed_overview.py`
-  - `scripts/make_figure2_failure_cases.py`
-  - `scripts/make_figure3_cross_model_evaluator_dependence.py`
-  - `scripts/make_figure4_score_geometry.py`
+##Main Scripts
+scripts/run_main_cross_model_eval.py
+scripts/run_significance_tests.py
+scripts/run_backbone_calibration_test.py
+scripts/run_confounding_controlled_benchmark.py
+scripts/run_controlled_signal_analysis.py
+scripts/run_gate_rescue_harm_audit.py
+scripts/run_heldout_operating_point_validation.py
+scripts/run_coverage_controlled_evaluation.py
+scripts/run_eligibility_shuffle_control.py
+scripts/run_qwen2vl_likelihood_analysis.py
 
-## Expected Inputs
+These scripts correspond to the main paper results and appendix diagnostics.
 
-Raw datasets and large model checkpoints are not included. Most scripts expect benchmark JSONs, scored benchmark files, or upstream model outputs under relative `Knowledge/output/` paths. Where the original workspace used absolute local paths, this release rewrites them to relative placeholders or generic local-path markers.
+## Selected Outputs
+output/tables/
+output/summaries/
+output/latex_tables/
 
-## Reproducing Main Tables
-
-Typical entry points:
-
-- Main significance summaries:
-  - `Knowledge/build_significance_master_table.py`
-  - `Knowledge/analyze_coco_winoground_significance_extension.py`
-  - `Knowledge/analyze_blip_openclip_significance.py`
-
-- Cross-model tables:
-  - `Knowledge/run_cross_model_suite.py`
-  - `Knowledge/summarize_cross_model_suite.py`
-  - `Knowledge/summarize_blip_cross_model.py`
-  - `Knowledge/summarize_siglip_qwen_cross_model.py`
-
-- Backbone-aware and calibration analyses:
-  - `Knowledge/analyze_backbone_aware_two_mode.py`
-  - `Knowledge/run_backbone_calibration_test.py`
-
-Selected paper-facing CSV/JSON/MD/TEX outputs are already included under `Knowledge/output/` for inspection.
-
-## Appendix Diagnostics
-
-Representative appendix diagnostics can be reproduced or inspected with:
-
-- `Knowledge/run_gate_rescue_harm_audit.py`
-- `Knowledge/run_heldout_operating_point_validation.py`
-- `Knowledge/run_coverage_controlled_evaluation.py`
-- `Knowledge/run_controlled_signal_analysis.py`
-- `Knowledge/run_confounding_controlled_benchmark_v3.py`
-- `Knowledge/run_qwen2vl_likelihood_grounding_eval.py`
-- `Knowledge/analyze_gate_sensitivity.py`
-
-## Notes
-
-- Raw datasets, proprietary checkpoints, and local environment caches are intentionally omitted.
-- Some scripts assume external benchmark files or model outputs that must be regenerated from original public sources.
-- Relative paths may need editing if users place benchmark inputs in different locations.
-- This package prioritizes double-blind safety over including every large intermediate artifact.
+These directories contain compact final artifacts used to support the reported paper tables. Full raw output dumps are intentionally excluded.
