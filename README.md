@@ -1,4 +1,4 @@
-# Anonymous Release: Ontology-Guided Probing of VLM Evaluation
+# Ontology-Guided Probing of VLM Evaluation
 
 This repository contains the anonymous supplementary code and selected result artifacts for the paper:
 
